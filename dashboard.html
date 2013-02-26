@@ -143,10 +143,43 @@
 							</div>
 						</div>
 					</div>
+					<div class="templateCT" style="display:none;">
+						<div class="row content">
+							<div class="span8">
+								<div>
+									<div class="face pull-left">
+										<img src="img/avatar-dodowoo.jpeg" />
+									</div>
+									<div class="CT_detail">
+										<div class="CT_info">
+											<a>dodowoo</a>
+										</div>
+										<div class="CT_text">
+											<label class="templateCTtext"></label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 		<script src="js/jquery-1.8.3.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('#btnSubmit').live('click', function(){
+					//alert($('#tbContent').val());
+					//$('#templateCTtext').val().replaceWith($('#tbContent').val());
+					$('.templateCT label.templateCTtext').replaceWith('<label class="templateCTtext">'+ $('#tbContent').val()+'</label>');
+					console.log($('.templateCT div.CT_text').html());
+					var Tct = $('.templateCT').clone();
+					console.log(Tct);
+					$('.contentlist').prepend(Tct.html());
+					return false;
+				});
+			});
+		</script>
 	</body>
 </html>
